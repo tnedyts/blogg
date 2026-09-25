@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Skyblog — простір для ідей, історій та корисних відкриттів." />
+  <title>Skyblog — простір для ідей</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%231d77c8' d='M13 47h36a10 10 0 0 0 1-20A17 17 0 0 0 18 24a12 12 0 0 0-5 23Z'/%3E%3Cpath fill='white' d='M23 39c5-1 10-8 11-17 4 8 9 13 16 14-6 4-17 5-27 3Z'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#posts">Перейти до дописів</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Skyblog, на головну">
+      <span class="brand-mark" aria-hidden="true">⌁</span><span>sky<span>blog</span></span>
+    </a>
+    <nav aria-label="Головна навігація">
+      <a href="#posts">Читати</a>
+      <a href="#about">Про нас</a>
+    </nav>
+    <div class="header-actions" id="headerActions">
+      <button class="button button-quiet" id="loginButton" type="button">Увійти</button>
+      <button class="button button-primary" id="registerButton" type="button">Створити акаунт</button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> незалежний український блог</p>
+        <h1 id="hero-title">Ідеї, що дають<br><em>більше повітря.</em></h1>
+        <p class="hero-text">Десять різних історій про міста, науку, подорожі, книги, їжу та речі, що варто помічати. Читайте — або залишайте власний слід.</p>
+        <div class="hero-actions">
+          <a class="button button-primary button-large" href="#posts">Відкрити добірку <span aria-hidden="true">↓</span></a>
+          <button class="text-button" id="heroWriteButton" type="button">Написати допис <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="paper-card card-back"><span>01</span><i></i><i></i><i></i></div>
+        <div class="paper-card card-front"><span>Сьогодні</span><strong>Побачити<br>незвичне</strong><div class="card-line"></div><small>читати далі →</small></div>
+        <div class="hero-doodle">✦</div>
+      </div>
+    </section>
+
+    <section class="feature" aria-labelledby="feature-title">
+      <article class="feature-story">
+        <div class="feature-number">01 / ВИБІР РЕДАКЦІЇ</div>
+        <p class="category travel">Подорожі</p>
+        <h2 id="feature-title">Місто, яке найкраще читати пішки</h2>
+        <p>Ужгород не намагається вразити з першої секунди. Він відкривається повільно: у кавових подвір’ях, на старих мостах і в розмовах, що нікуди не поспішають.</p>
+        <button class="inline-read" type="button" data-post="1">Прочитати історію <span aria-hidden="true">→</span></button>
+      </article>
+      <div class="feature-note"><span class="note-star">✦</span><p>Хороша історія — це та, після якої хочеться зателефонувати другові або вийти з дому.</p></div>
+    </section>
+
+    <section class="posts-section" id="posts" aria-labelledby="posts-title">
+      <div class="section-heading">
+        <div><p class="eyebrow"><span></span> свіжа добірка</p><h2 id="posts-title">Знайдіть свій наступний<br>привід задуматися</h2></div>
+        <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Пошук історій" aria-label="Пошук історій" /></label>
+      </div>
+      <div class="filter-row" role="group" aria-label="Категорії дописів">
+        <button class="filter active" data-filter="Усі" type="button">Усі <span id="postCount">10</span></button>
+        <button class="filter" data-filter="Міста" type="button">Міста</button>
+        <button class="filter" data-filter="Люди" type="button">Люди</button>
+        <button class="filter" data-filter="Наука" type="button">Наука</button>
+        <button class="filter" data-filter="Культура" type="button">Культура</button>
+        <button class="filter" data-filter="Дім" type="button">Дім</button>
+        <button class="filter" data-filter="Подорожі" type="button">Подорожі</button>
+      </div>
+      <div class="post-grid" id="postGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>Схоже, за таким запитом дописів ще немає.</p>
+    </section>
+
+    <section class="contribute" id="about">
+      <div><p class="eyebrow"><span></span> ваш голос важливий</p><h2>Є чим поділитися?<br>Тут для цього є місце.</h2></div>
+      <div class="contribute-copy"><p>Відкрийте свій невеликий куточок інтернету: пишіть особисті історії, пояснюйте складне, збирайте маршрути й думки.</p><button class="button button-dark button-large" id="contributeButton" type="button">Створити свій допис <span aria-hidden="true">↗</span></button></div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">⌁</span><span>sky<span>blog</span></span></a>
+    <p>Місце для допитливих людей. Створено з турботою про хороші тексти.</p>
+    <p class="copyright">© 2026 Skyblog</p>
+  </footer>
+
+  <dialog class="modal article-modal" id="articleModal" aria-labelledby="articleTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрити">×</button>
+    <article id="articleContent"></article>
+  </dialog>
+
+  <dialog class="modal auth-modal" id="authModal" aria-labelledby="authTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрити">×</button>
+    <div class="auth-heading"><p class="eyebrow"><span></span> skyblog</p><h2 id="authTitle">Раді вас бачити</h2><p id="authLead">Увійдіть, щоб публікувати власні історії.</p></div>
+    <form id="loginForm" class="auth-form">
+      <label>Електронна пошта<input type="email" id="loginEmail" required autocomplete="email" placeholder="you@example.com" /></label>
+      <label>Пароль<input type="password" id="loginPassword" required autocomplete="current-password" placeholder="Ваш пароль" /></label>
+      <p class="form-message" id="loginMessage"></p>
+      <button class="button button-primary button-full" type="submit">Увійти</button>
+      <p class="form-switch">Ще немає акаунта? <button type="button" class="link-button" data-switch="register">Зареєструватися</button></p>
+    </form>
+    <form id="registerForm" class="auth-form" hidden>
+      <label>Ваше ім’я<input type="text" id="registerName" required autocomplete="name" placeholder="Наприклад, Марія" /></label>
+      <label>Електронна пошта<input type="email" id="registerEmail" required autocomplete="email" placeholder="you@example.com" /></label>
+      <label>Пароль<input type="password" id="registerPassword" required minlength="4" autocomplete="new-password" placeholder="Щонайменше 4 символи" /></label>
+      <p class="form-note">Навчальна версія: дані зберігаються лише у вашому браузері.</p>
+      <p class="form-message" id="registerMessage"></p>
+      <button class="button button-primary button-full" type="submit">Створити акаунт</button>
+      <p class="form-switch">Вже маєте акаунт? <button type="button" class="link-button" data-switch="login">Увійти</button></p>
+    </form>
+  </dialog>
+
+  <dialog class="modal compose-modal" id="composeModal" aria-labelledby="composeTitle">
+    <button class="modal-close" type="button" data-close aria-label="Закрити">×</button>
+    <div class="auth-heading"><p class="eyebrow"><span></span> нова історія</p><h2 id="composeTitle">Напишіть те, що варто зберегти</h2><p>Ваш допис з’явиться у стрічці цього браузера.</p></div>
+    <form id="postForm" class="post-form">
+      <label>Заголовок<input type="text" id="postTitle" required maxlength="110" placeholder="Про що ваша історія?" /></label>
+      <label>Категорія<select id="postCategory"><option>Люди</option><option>Міста</option><option>Наука</option><option>Культура</option><option>Дім</option><option>Подорожі</option></select></label>
+      <label>Короткий опис<textarea id="postExcerpt" required maxlength="260" rows="3" placeholder="Кілька речень, які запросять читача…"></textarea></label>
+      <label>Текст допису<textarea id="postContent" required rows="8" placeholder="Розкажіть свою історію. Новий абзац — новий рядок."></textarea></label>
+      <p class="form-message" id="postMessage"></p>
+      <button class="button button-primary button-full" type="submit">Опублікувати допис <span aria-hidden="true">→</span></button>
+    </form>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
